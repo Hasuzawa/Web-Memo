@@ -19,14 +19,14 @@
 .notice {
     background-color: #fff38f;
     box-shadow: 0px 5px 10px -3px black;
-    @apply flex flex-col relative;
+    @apply flex flex-col relative p-2;
 }
 
 .text-area {
     background: transparent;
     resize: none;
     overflow: hidden;
-    @apply w-full h-full p-2 text-xl;
+    @apply w-full h-full text-xl;
     @apply focus:outline-none;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .header {
-    @apply flex flex-row;
+    @apply flex flex-row justify-between items-center;
 }
 
 .counter {
@@ -59,4 +59,16 @@
     @apply text-red-500 absolute;
     top: calc(50% - 64px);
     left: calc(50% - 64px);
+}
+
+.title {
+    @apply text-lg focus:outline-none font-bold bg-transparent;
+}
+
+.notice-corner {
+    bottom: 0;
+    right: 0;
+    border-width: 20px;
+    border-color: #c9b816 rgba(0, 0, 0, 0.566) rgba(0, 0, 0, 0.566) #c9b816; 
+    @apply absolute focus:outline-none;
 }

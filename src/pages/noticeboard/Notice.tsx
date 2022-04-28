@@ -2,7 +2,8 @@ import { useState, useRef } from "react"
 import { motion, AnimatePresence, Variants, Transition } from "framer-motion"
 import { ImCross } from "react-icons/im"
 
-const maxLength = 300
+const titleMaxLength = 20
+const contentMaxLength = 300
 const size = 128
 
 const noticeAnimation = {
@@ -87,6 +88,7 @@ const Notice = (props: noticeProps) => {
 
 
 
+
     const cross = (
         <motion.span
             className="cross-container"
@@ -114,7 +116,8 @@ const Notice = (props: noticeProps) => {
                 exit="fade"
             >
                 <div className="header">
-                    {text.length > 0 ? <span className="counter">{text.length}/{maxLength}</span> : null}
+                    <input type="text" className="title" maxLength={titleMaxLength}/>
+                    {text.length > 0 ? <span className="counter">{text.length}/{contentMaxLength}</span> : null}
                 </div>
                 <textarea
                     className="text-area"
@@ -122,7 +125,7 @@ const Notice = (props: noticeProps) => {
                     disabled={false}
                     readOnly={false}
                     spellCheck={false}
-                    maxLength={maxLength}
+                    maxLength={contentMaxLength}
                     onChange={handleChange}
                     value={text}
 
@@ -134,9 +137,17 @@ const Notice = (props: noticeProps) => {
 
                     ref={textAreaRef}
                 />
-                {deleting ? cross : null}
+                
                 <h1>{props.id}</h1>
-                <button onClick={() => props.deleteNotice(props.id)}>delete this</button>
+                {/* <button onClick={deleteThis}>delete this</button> */}
+                {deleting ? cross : null}
+                <button
+                    className="notice-corner"
+                    onClick={deleteThis}
+                    onKeyDown={(e) => (e.key === "Delete" || e.key === "Backspace") ? deleteThis() : null}
+                    onFocus={() => setDeleting(true)}
+                    onBlur={() => setDeleting(false)}
+                />
             </motion.div>
         </AnimatePresence>
     )
