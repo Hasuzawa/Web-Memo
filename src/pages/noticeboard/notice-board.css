@@ -1,0 +1,27 @@
+.outer-frame {
+    background-color: #996629;
+    @apply w-screen p-6 h-fit min-h-screen overscroll-none;
+    @apply flex flex-col; /* make item stretch to container while still able to expand */
+
+}
+
+.inner-frame {
+    background-color: #e7a664;
+    @apply w-full flex-1;
+    @apply flex flex-row flex-wrap p-6 gap-6 place-content-start;
+}
+
+.notice {
+    background-color: #fff38f;
+    width: 18em;
+    height: 18em;
+    box-shadow: 0px 5px 10px -3px black;
+}
+
+.text-area {
+    background: transparent;
+    resize: none;
+    overflow: hidden;
+    @apply w-full h-full p-2 text-xl;
+    @apply focus:outline-none;
+}
