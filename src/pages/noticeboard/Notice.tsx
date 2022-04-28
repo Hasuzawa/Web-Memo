@@ -24,10 +24,13 @@ const noticeAnimation = {
 
 const crossAnimation = {
     appear: {
-        opacity: 0.5
+        opacity: 0.3
     },
     visible: {
-        opacity: 1
+        opacity: 1,
+        transition: {
+            duration: 0.4
+        }
     },
     fade: {
         opacity: 0
@@ -39,7 +42,8 @@ const crossAnimation = {
 
 
 interface noticeProps {
-    id: number
+    id: number,
+    deleteNotice: (id: number) => void
 }
 
 
@@ -51,6 +55,8 @@ const Notice = (props: noticeProps) => {
         setText(e.currentTarget.value)
     }
 
+    const deleteThis = () => props.deleteNotice(props.id)
+
     // const handleInput = () => {
     //     const currentRef = textAreaRef.current
     //     if (!currentRef) return
@@ -61,27 +67,51 @@ const Notice = (props: noticeProps) => {
 
     // experimenting
 
-    const [shift, setShift ] = useState<boolean>(false)
-    const handleKeyDown = (e: React.MouseEvent<HTMLDivElement>) => {
-        
-    }
+    // const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    //     setDeleting(e.ctrlKey && e.shiftKey ? true : false)
+    //     if (e.key == "Delete" || e.key == "Backspace") {
+    //         deleteThis()
+    //     }
+    // }
+    // const handleKeyUp = () => setDeleting(false)
 
-    const [hover, setHover ] = useState<boolean>(true)
+    const [deleting, setDeleting] = useState<boolean>(false)
+    // const handleMouseOver = (e: React.MouseEvent<HTMLTextAreaElement>) => {
+    //     setDeleting(e.ctrlKey && e.shiftKey ? true : false)
+    // }
+    // const handleClick = (e: React.MouseEvent<HTMLTextAreaElement>) => {
+    //     e.preventDefault()
+    //     if (deleting)
+    //         deleteThis()
+    // }
 
-    const deleter = <ImCross className="deleter" size={size} />
+
+
+    const cross = (
+        <motion.span
+            className="cross-container"
+            variants={crossAnimation}
+            initial="appear"
+            animate="visible"
+            exit="fade"
+        >
+            <ImCross
+                className="cross-icon"
+                size={size}
+            />
+        </motion.span>
+    )
 
 
     return (
         <AnimatePresence>
             <motion.div
+                layout
                 className="box-dimension notice"
                 variants={noticeAnimation}
                 initial="appear"
                 animate="visible"
                 exit="fade"
-                onKeyDown={(e) => handleKeyDown}
-                onMouseEnter={() => setHover(true)}
-                onMouseLeave={() => setHover(false)}
             >
                 <div className="header">
                     {text.length > 0 ? <span className="counter">{text.length}/{maxLength}</span> : null}
@@ -95,10 +125,18 @@ const Notice = (props: noticeProps) => {
                     maxLength={maxLength}
                     onChange={handleChange}
                     value={text}
-                    // onInput={handleInput}
+
+                    // onKeyDown={handleKeyDown}
+                    // onKeyUp={handleKeyUp}
+                    // onMouseOver={handleMouseOver}
+                    // onMouseLeave={() => setDeleting(false)}
+                    // onClick={handleClick}
+
                     ref={textAreaRef}
                 />
-                {deleter}
+                {deleting ? cross : null}
+                <h1>{props.id}</h1>
+                <button onClick={() => props.deleteNotice(props.id)}>delete this</button>
             </motion.div>
         </AnimatePresence>
     )

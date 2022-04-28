@@ -51,7 +51,11 @@
     @apply text-sm text-gray-500;
 }
 
-.deleter {
+/* .cross-icon {
+
+} */
+
+.cross-container {
     @apply text-red-500 absolute;
     top: calc(50% - 64px);
     left: calc(50% - 64px);

@@ -17,7 +17,8 @@ const Add = (props: AddProps) => {
     }
 
     return (
-        <div
+        <motion.div
+            layout
             className="box-dimension add"
             onClick={handleClick}
         >
@@ -25,7 +26,7 @@ const Add = (props: AddProps) => {
                 className="plus-sign"
                 size={size}
             />
-        </div>
+        </motion.div>
     )
 }
 
