@@ -7,7 +7,7 @@ function App() {
     <div>
       <h1>this is the root page</h1>
       <li>
-        <Link to="/notice-board" >to notice board</Link>
+        <Link to="/notice-board" >The Notice Board</Link>
         
       </li>
     </div>
