@@ -1,18 +1,24 @@
 import { FaPlus } from "react-icons/fa"
-import { motion, AnimatePresence, Variants, Transition } from "framer-motion"
+import { motion } from "framer-motion"
 
 
 const size = 147
 
 interface AddProps {
-    addNotice: React.Dispatch<React.SetStateAction<any>>
+    addNotice: () => void
 }
 
 const Add = (props: AddProps) => {
+    const triggerAdd = () => props.addNotice()
 
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        props.addNotice(e)
+        triggerAdd()
+    }
+
+    const handleMouseDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === "Enter")
+            triggerAdd()
     }
 
     return (
@@ -20,6 +26,8 @@ const Add = (props: AddProps) => {
             layout
             className="box-dimension add"
             onClick={handleClick}
+            tabIndex={0}
+            onKeyDown={handleMouseDown}
         >
             <FaPlus
                 className="plus-sign"

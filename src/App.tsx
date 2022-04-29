@@ -11,6 +11,7 @@ const App = () => {
         <Helmet>
           <title>Web Memo</title>
         </Helmet>
+        {/* <BrowserRouter basename={process.env.PUBLIC_URL}> this is required for deploying on Github page */}
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Board />} />

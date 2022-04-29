@@ -37,11 +37,16 @@
 }
 
 .add {
-    /* background-color: rgb(255, 202, 202); */
     @apply border-8 border-sky-800 border-dashed;
     border-radius: 2.4em;
-    @apply cursor-pointer;
+    @apply cursor-pointer focus:outline-none;
     @apply flex flex-row place-content-center place-items-center;
+}
+.add:focus {
+    animation: blink 1s linear infinite;
+}
+@keyframes blink {
+    50% { opacity: 0}
 }
 
 .plus-sign {
