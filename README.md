@@ -15,3 +15,4 @@ Tip: You can hold Enter when the add button is flashing to add many memo at once
 - v1.0.0 2022-04-30 Published using Github pages.
 - v1.0.1 2022-04-30 Added tab select and keyboard listener for the Adder. Can now Hold Enter to create many memo at once.
 - v1.0.2 2022-04-30 Fixed routing issues. Added Esc to lose focus (blur) on add and delete.
+- v1.0.3 2022-04-30 Fixed HTML meta screenshot path and changed the png.
