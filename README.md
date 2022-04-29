@@ -8,6 +8,6 @@ I have set a maximum of 50 memos at one time, but that is not due to no technica
 
 It also has a simple custom 404 page. Try it out!
 
-## Keeplog
+## Changelog
 
 v1.0 Published on 2022-04-30.
