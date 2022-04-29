@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion, AnimatePresence, Variants, Transition } from "framer-motion"
 import { ImCross } from "react-icons/im"
 
@@ -10,7 +10,7 @@ const memoTransition: Transition = {
     duration: 0.5
 }
 
-const memoAnimation = {
+const memoAnimation: Variants = {
     appear: {
         opacity: 0.3,
         y: 30
@@ -26,7 +26,7 @@ const crossTransition = {
     duration: 0.3
 }
 
-const crossAnimation = {
+const crossAnimation: Variants = {
     appear: {
         opacity: 0.3
     },
@@ -80,6 +80,13 @@ const Notice = (props: noticeProps) => {
         </motion.span>
     )
 
+    const cornerRef = useRef<HTMLButtonElement>(null)
+    const onCornerKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+        if (e.key === "Delete" || e.key === "Backspace")
+            deleteThis()
+        else if (e.key === "Escape")
+            cornerRef.current?.blur()
+    }
 
     return (
         <AnimatePresence>
@@ -108,18 +115,18 @@ const Notice = (props: noticeProps) => {
                     { ...plainTextField }
                 />
                 
-                {/* <span>{props.id}</span> */}
                 <AnimatePresence>
                     {deleting ? cross : null}
                 </AnimatePresence>
                 <button
                     className="notice-corner"
                     onClick={deleteThis}
-                    onKeyDown={(e) => (e.key === "Delete" || e.key === "Backspace") ? deleteThis() : null}
+                    onKeyDown={onCornerKeyDown}
                     onMouseEnter={() => setDeleting(true)}
                     onMouseLeave={() => setDeleting(false)}
                     onFocus={() => setDeleting(true)}
                     onBlur={() => setDeleting(false)}
+                    ref={cornerRef}
                 />
             </motion.div>
         </AnimatePresence>

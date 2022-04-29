@@ -5,14 +5,14 @@ import { Helmet } from "react-helmet"
 
 
 const App = () => {
+  const baseUrl = process.env.NODE_ENV === "development" ? "" : process.env.PUBLIC_URL
 
     return (
       <>
         <Helmet>
           <title>Web Memo</title>
         </Helmet>
-        {/* <BrowserRouter basename={process.env.PUBLIC_URL}> this is required for deploying on Github page */}
-        <BrowserRouter>
+        <BrowserRouter basename={baseUrl}>
             <Routes>
                 <Route path="/" element={<Board />} />
                 <Route path="*" element={<Error404 />} />

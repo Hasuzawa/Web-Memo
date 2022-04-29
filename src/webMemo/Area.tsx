@@ -1,7 +1,7 @@
 import Memo from "./Memo"
 import Add from "./Add"
 import { useState, useEffect } from "react"
-import { AnimatePresence, LayoutGroup } from "framer-motion"
+import { LayoutGroup } from "framer-motion"
 
 
 const initial = 5
@@ -20,8 +20,7 @@ const NoticeBoard = () => {
     const addNotice = () => setNotices([...notices, id])
 
     const deleteNotice = (k: number) => {
-        console.log("id to be deleted", k)
-        const newList = notices.filter(x => x != k)
+        const newList = notices.filter(x => x !== k)
         setNotices(newList)
     }
 
