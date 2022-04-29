@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Error404 from "./pages/webMemo/Error404"
-import Board from "./pages/webMemo/Board"
+import Error404 from "./webMemo/Error404"
+import Board from "./webMemo/Board"
 import { Helmet } from "react-helmet"
 
 

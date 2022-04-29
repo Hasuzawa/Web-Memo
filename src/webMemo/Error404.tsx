@@ -2,6 +2,7 @@ import Frame from "./Frame"
 import ReturnMemo from "./ReturnMemo"
 import "./webMemo.css"
 
+
 const Error404 = () => {
 
     return (

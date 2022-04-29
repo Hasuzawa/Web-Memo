@@ -2,7 +2,6 @@ import { FaPlus } from "react-icons/fa"
 import { motion, AnimatePresence, Variants, Transition } from "framer-motion"
 
 
-
 const size = 147
 
 interface AddProps {

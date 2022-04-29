@@ -1,4 +1,4 @@
-import Area from "./Area"
+
 
 interface FrameProps {
     children: React.ReactNode

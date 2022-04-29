@@ -4,9 +4,13 @@ import { ImCross } from "react-icons/im"
 
 const titleMaxLength = 25
 const contentMaxLength = 300
-const size = 128
+const iconSize = 128
 
-const noticeAnimation = {
+const memoTransition: Transition = {
+    duration: 0.5
+}
+
+const memoAnimation = {
     appear: {
         opacity: 0.3,
         y: 30
@@ -14,16 +18,12 @@ const noticeAnimation = {
     visible: {
         opacity: 1,
         y: 0,
-        transition: {
-            duration: 0.5
-        }
-    },
-    fade: {
-        y: -50,
-        transition: {
-            duration: 0.5
-        }
+        transition: memoTransition
     }
+}
+
+const crossTransition = {
+    duration: 0.3
 }
 
 const crossAnimation = {
@@ -32,15 +32,11 @@ const crossAnimation = {
     },
     visible: {
         opacity: 1,
-        transition: {
-            duration: 0.3
-        }
+        transition: crossTransition
     },
     fade: {
         opacity: 0,
-        transition: {
-            duration: 0.3
-        }
+        transition: crossTransition
     }
 }
 
@@ -79,8 +75,7 @@ const Notice = (props: noticeProps) => {
             exit="fade"
         >
             <ImCross
-                className="cross-icon"
-                size={size}
+                size={iconSize}
             />
         </motion.span>
     )
@@ -91,7 +86,7 @@ const Notice = (props: noticeProps) => {
             <motion.div
                 layout
                 className="box-dimension memo"
-                variants={noticeAnimation}
+                variants={memoAnimation}
                 initial="appear"
                 animate="visible"
                 exit="fade"
@@ -113,7 +108,7 @@ const Notice = (props: noticeProps) => {
                     { ...plainTextField }
                 />
                 
-                <h1>{props.id}</h1>
+                {/* <span>{props.id}</span> */}
                 <AnimatePresence>
                     {deleting ? cross : null}
                 </AnimatePresence>

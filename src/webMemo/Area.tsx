@@ -1,7 +1,7 @@
 import Memo from "./Memo"
 import Add from "./Add"
 import { useState, useEffect } from "react"
-import { LayoutGroup } from "framer-motion"
+import { AnimatePresence, LayoutGroup } from "framer-motion"
 
 
 const initial = 5
@@ -17,7 +17,7 @@ const NoticeBoard = () => {
     }, [id])
 
     const [notices, setNotices] = useState<number[]>([1,2,3,4,5])
-    const addNotice = () => setNotices([...notices, id])  // TODO: holding a particular key can create 5 at once
+    const addNotice = () => setNotices([...notices, id])
 
     const deleteNotice = (k: number) => {
         console.log("id to be deleted", k)
