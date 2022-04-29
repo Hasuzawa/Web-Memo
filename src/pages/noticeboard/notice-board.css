@@ -62,7 +62,7 @@
 }
 
 .title {
-    @apply text-lg focus:outline-none font-bold bg-transparent;
+    @apply text-lg focus:outline-none font-bold bg-transparent focus:border-b-2 border-black;
 }
 
 .notice-corner {

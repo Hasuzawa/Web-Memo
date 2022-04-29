@@ -2,7 +2,7 @@ import { useState, useRef } from "react"
 import { motion, AnimatePresence, Variants, Transition } from "framer-motion"
 import { ImCross } from "react-icons/im"
 
-const titleMaxLength = 20
+const titleMaxLength = 25
 const contentMaxLength = 300
 const size = 128
 
@@ -19,7 +19,10 @@ const noticeAnimation = {
         }
     },
     fade: {
-        opacity: 0
+        y: -50,
+        transition: {
+            duration: 1
+        }
     }
 }
 
@@ -86,11 +89,21 @@ const Notice = (props: noticeProps) => {
     //         deleteThis()
     // }
 
+    const plainTextField = {
+        disabled: false,
+        spellCheck: false,
+        readOnly: false,
+        autoCapitalize: "none",
+        autoComplete: "off",
+        autoCorrect: "off"
+    }
+
 
 
 
     const cross = (
         <motion.span
+            layout
             className="cross-container"
             variants={crossAnimation}
             initial="appear"
@@ -116,31 +129,29 @@ const Notice = (props: noticeProps) => {
                 exit="fade"
             >
                 <div className="header">
-                    <input type="text" className="title" maxLength={titleMaxLength}/>
+                    <input
+                        type="text"
+                        className="title"
+                        maxLength={titleMaxLength}
+                        { ...plainTextField }
+                    />
                     {text.length > 0 ? <span className="counter">{text.length}/{contentMaxLength}</span> : null}
                 </div>
                 <textarea
                     className="text-area"
-                    autoComplete="off"
-                    disabled={false}
-                    readOnly={false}
-                    spellCheck={false}
                     maxLength={contentMaxLength}
                     onChange={handleChange}
                     value={text}
-
+                    { ...plainTextField }
                     // onKeyDown={handleKeyDown}
                     // onKeyUp={handleKeyUp}
                     // onMouseOver={handleMouseOver}
                     // onMouseLeave={() => setDeleting(false)}
                     // onClick={handleClick}
-
-                    ref={textAreaRef}
                 />
                 
                 <h1>{props.id}</h1>
-                {/* <button onClick={deleteThis}>delete this</button> */}
-                {deleting ? cross : null}
+                    {deleting ? cross : null}
                 <button
                     className="notice-corner"
                     onClick={deleteThis}

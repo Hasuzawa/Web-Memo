@@ -2,7 +2,7 @@ import "./notice-board.css"
 import Notice from "./Notice"
 import Add from "./Add"
 import { useState, useEffect } from "react"
-import { LayoutGroup, Reorder } from "framer-motion"
+import { LayoutGroup } from "framer-motion"
 
 
 const initial = 5
@@ -13,7 +13,8 @@ const NoticeBoard = () => {
     const increaseId = () => setId(id + 1)
 
     useEffect(() => {
-        addNotice()
+        if (id > initial)   // block initial render when initial value is set
+            addNotice()
     }, [id])
 
     const [notices, setNotices] = useState<number[]>([1,2,3,4,5])
@@ -54,7 +55,7 @@ const NoticeBoard = () => {
                             deleteNotice={deleteNotice}
                         />)}
                 
-                    {canAdd ? adder : null}
+                    {/* {canAdd ? adder : null} */}
                 </LayoutGroup>
             </div>
         </div>
