@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState } from "react"
 import { motion, AnimatePresence, Variants, Transition } from "framer-motion"
 import { ImCross } from "react-icons/im"
 
@@ -41,19 +41,22 @@ const crossAnimation = {
     }
 }
 
-
-
-
+const plainTextField = {
+    disabled: false,
+    spellCheck: false,
+    readOnly: false,
+    autoCapitalize: "none",
+    autoComplete: "off",
+    autoCorrect: "off"
+}
 
 interface noticeProps {
     id: number,
     deleteNotice: (id: number) => void
 }
 
-
 const Notice = (props: noticeProps) => {
     const [text, setText] = useState<string>("")
-    const textAreaRef = useRef<HTMLTextAreaElement>(null)
 
     const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setText(e.currentTarget.value)
@@ -61,45 +64,7 @@ const Notice = (props: noticeProps) => {
 
     const deleteThis = () => props.deleteNotice(props.id)
 
-    // const handleInput = () => {
-    //     const currentRef = textAreaRef.current
-    //     if (!currentRef) return
-    //     while (currentRef?.clientHeight < currentRef?.scrollHeight) {
-    //         text.substring(0, text.length - 1)
-    //     }
-    // }
-
-    // experimenting
-
-    // const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    //     setDeleting(e.ctrlKey && e.shiftKey ? true : false)
-    //     if (e.key == "Delete" || e.key == "Backspace") {
-    //         deleteThis()
-    //     }
-    // }
-    // const handleKeyUp = () => setDeleting(false)
-
     const [deleting, setDeleting] = useState<boolean>(false)
-    // const handleMouseOver = (e: React.MouseEvent<HTMLTextAreaElement>) => {
-    //     setDeleting(e.ctrlKey && e.shiftKey ? true : false)
-    // }
-    // const handleClick = (e: React.MouseEvent<HTMLTextAreaElement>) => {
-    //     e.preventDefault()
-    //     if (deleting)
-    //         deleteThis()
-    // }
-
-    const plainTextField = {
-        disabled: false,
-        spellCheck: false,
-        readOnly: false,
-        autoCapitalize: "none",
-        autoComplete: "off",
-        autoCorrect: "off"
-    }
-
-
-
 
     const cross = (
         <motion.span
@@ -122,7 +87,7 @@ const Notice = (props: noticeProps) => {
         <AnimatePresence>
             <motion.div
                 layout
-                className="box-dimension notice"
+                className="box-dimension memo"
                 variants={noticeAnimation}
                 initial="appear"
                 animate="visible"
@@ -143,11 +108,6 @@ const Notice = (props: noticeProps) => {
                     onChange={handleChange}
                     value={text}
                     { ...plainTextField }
-                    // onKeyDown={handleKeyDown}
-                    // onKeyUp={handleKeyUp}
-                    // onMouseOver={handleMouseOver}
-                    // onMouseLeave={() => setDeleting(false)}
-                    // onClick={handleClick}
                 />
                 
                 <h1>{props.id}</h1>

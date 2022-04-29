@@ -8,7 +8,14 @@
 .inner-frame {
     background-color: #e7a664;
     @apply w-full flex-1;
+}
+
+.start-memo {
     @apply flex flex-row flex-wrap p-6 gap-6 place-content-start;
+}
+
+.center-memo {
+    @apply flex flex-row flex-wrap place-content-center place-items-center;
 }
 
 .box-dimension {
@@ -16,7 +23,7 @@
     height: 18em;
 }
 
-.notice {
+.memo {
     background-color: #fff38f;
     box-shadow: 0px 5px 10px -3px black;
     @apply flex flex-col relative p-2;
@@ -51,10 +58,6 @@
     @apply text-sm text-gray-500;
 }
 
-/* .cross-icon {
-
-} */
-
 .cross-container {
     @apply text-red-500 absolute;
     top: calc(50% - 64px);
@@ -71,4 +74,20 @@
     border-width: 20px;
     border-color: #c9b816 rgba(0, 0, 0, 0.566) rgba(0, 0, 0, 0.566) #c9b816; 
     @apply absolute focus:outline-none;
+}
+
+.return-memo {
+    @apply place-items-center;
+}
+
+.e404 {
+    font-size: 60px;
+}
+
+.e404-header {
+    font-size: 20px;
+}
+
+.e404-return {
+    @apply mt-12 p-2 rounded-full;
 }

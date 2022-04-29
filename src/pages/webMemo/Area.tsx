@@ -1,5 +1,4 @@
-import "./notice-board.css"
-import Notice from "./Notice"
+import Memo from "./Memo"
 import Add from "./Add"
 import { useState, useEffect } from "react"
 import { LayoutGroup } from "framer-motion"
@@ -37,28 +36,15 @@ const NoticeBoard = () => {
     />
 
     return (
-        <div className="outer-frame">
-            <div className="inner-frame">
-                {/* <Reorder.Group values={notices} onReorder={setNotices}>
-                    {notices.map((id: number) => 
-                        <Reorder.Item key={id} value={id}>
-                            {id}
-                        </Reorder.Item>
-                    )}
-                </Reorder.Group> */}
-
-                <LayoutGroup>
-                    {notices.map((id: number) =>
-                         <Notice
-                            key={id.toString()}
-                            id={id}
-                            deleteNotice={deleteNotice}
-                        />)}
-                
-                    {/* {canAdd ? adder : null} */}
-                </LayoutGroup>
-            </div>
-        </div>
+        <LayoutGroup>
+            {notices.map((id: number) =>
+                <Memo
+                    key={id.toString()}
+                    id={id}
+                    deleteNotice={deleteNotice}
+                />)}
+            {canAdd ? adder : null}
+        </LayoutGroup>
     )
 }
 
