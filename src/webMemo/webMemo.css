@@ -29,9 +29,7 @@
 }
 
 .text-area {
-    background: transparent;
-    resize: none;
-    overflow: hidden;
+    @apply bg-transparent resize-none text-clip;
     @apply w-full h-full text-xl;
     @apply focus:outline-none;
 }
@@ -74,11 +72,15 @@
 }
 
 .notice-corner {
-    bottom: 0;
-    right: 0;
-    border-width: 20px;
-    border-color: #c9b816 rgba(0, 0, 0, 0.566) rgba(0, 0, 0, 0.566) #c9b816; 
+    @apply w-12 h-12 bottom-0 right-0;
+    background-color: #c9b816;
     @apply absolute focus:outline-none;
+}
+
+.lower-triangle {
+    @apply absolute w-12 h-12 left-0 top-0;
+    border-width: 24px;
+    border-color: transparent rgba(0, 0, 0, 0.566) rgba(0, 0, 0, 0.566) transparent; 
 }
 
 .return-memo {

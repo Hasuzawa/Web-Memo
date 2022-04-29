@@ -1,6 +1,6 @@
 ## Web Memo
 
-This is a minimalistic Web memo for writing memo online. It does not use cookie and has no save feature. Honestly, with Windows Notepad, Mac Notes, Notepad++, there is very little reason to ever use this. But it is available for everyone with internet connection, on computer or mobile phone, using any operating system, without downloading anything. It also saves a little bit of paper.
+This is a minimalistic Web Memo for writing memo online. It does not use cookie and has no save feature. Honestly, with Windows Notepad, Mac Notes, Notepad++, there is very little reason to ever use this. But it is available for everyone with internet connection, on computer or mobile phone, using any operating system, without downloading anything. It also saves a little bit of paper.
 
 [Link to the web-memo website](https://hasuzawa.github.io/Web-Memo)
 
@@ -16,3 +16,4 @@ Tip: You can hold Enter when the add button is flashing to add many memo at once
 - v1.0.1 2022-04-30 Added tab select and keyboard listener for the Adder. Can now Hold Enter to create many memo at once.
 - v1.0.2 2022-04-30 Fixed routing issues. Added Esc to lose focus (blur) on add and delete.
 - v1.0.3 2022-04-30 Fixed HTML meta screenshot path and changed the png.
+- v1.0.4 2022-04-30 Refactored CSS. Changed how overflow behaves.

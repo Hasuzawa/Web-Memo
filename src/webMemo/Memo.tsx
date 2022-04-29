@@ -127,7 +127,9 @@ const Notice = (props: noticeProps) => {
                     onFocus={() => setDeleting(true)}
                     onBlur={() => setDeleting(false)}
                     ref={cornerRef}
-                />
+                >
+                    <span className="lower-triangle" />
+                </button>
             </motion.div>
         </AnimatePresence>
     )
