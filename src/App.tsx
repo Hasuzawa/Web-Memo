@@ -1,18 +1,24 @@
-import React from 'react';
-import './App.css';
-import {Link} from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Error404 from "./pages/webMemo/Error404"
+import Board from "./pages/webMemo/Board"
+import { Helmet } from "react-helmet"
 
-function App() {
-  return (
-    <div>
-      <h1>this is the root page</h1>
-      <li>
-        <Link to="/notice-board" >The Notice Board</Link>
-        
-      </li>
-    </div>
-    
-  )
+
+const App = () => {
+
+    return (
+      <>
+        <Helmet>
+          <title>Web Memo</title>
+        </Helmet>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Board />} />
+                <Route path="*" element={<Error404 />} />
+            </Routes>
+        </BrowserRouter>
+      </>
+    )
 }
 
-export default App;
+export default App

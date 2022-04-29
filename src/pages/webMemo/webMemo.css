@@ -2,7 +2,6 @@
     background-color: #996629;
     @apply w-screen p-6 h-fit min-h-screen overscroll-none;
     @apply flex flex-col; /* make item stretch to container while still able to expand */
-
 }
 
 .inner-frame {
@@ -65,7 +64,8 @@
 }
 
 .title {
-    @apply text-lg focus:outline-none font-bold bg-transparent focus:border-b-2 border-black;
+    @apply text-lg font-bold bg-transparent border-black pb-0.5;
+    @apply focus:outline-none focus:border-b-2 focus:pb-0;
 }
 
 .notice-corner {
@@ -89,5 +89,5 @@
 }
 
 .e404-return {
-    @apply mt-12 p-2 rounded-full;
+    @apply mt-8 p-4 rounded-full;
 }

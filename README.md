@@ -4,3 +4,4 @@ This is a minimalistic web memo. It does not use cookie and has no save feature.
 
 [Link to the web-memo website]()
 
+It also has a simple custom 404 page. Try it out!

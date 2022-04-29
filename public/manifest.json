@@ -1,6 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Web Memo",
+  "name": "Web Memo for writing ticket and reminder",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["memo", "reminder", "notice"],
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,18 +11,26 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "scope": "/",
+  "theme_color": "#fff38f",
+  "background_color": "#996629",
+  "screenshots": [
+    {
+      "src": "/screenshots/schreenshot1.png",
+      "type": "image/png",
+      "sizes": ""
+    }
+  ]
 }

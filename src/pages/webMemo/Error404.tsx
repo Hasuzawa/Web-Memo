@@ -1,6 +1,6 @@
 import Frame from "./Frame"
 import ReturnMemo from "./ReturnMemo"
-import "./web-memo.css"
+import "./webMemo.css"
 
 const Error404 = () => {
 

@@ -1,12 +1,12 @@
 import Frame from "./Frame"
 import Area from "./Area"
-import "./web-memo.css"
+import "./webMemo.css"
 
 
 const Board = () => {
 
     return (
-        <Frame memoPlacement="center">
+        <Frame memoPlacement="start">
             <Area />
         </Frame>
     )

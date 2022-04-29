@@ -21,7 +21,7 @@ const noticeAnimation = {
     fade: {
         y: -50,
         transition: {
-            duration: 1
+            duration: 0.5
         }
     }
 }
@@ -33,11 +33,14 @@ const crossAnimation = {
     visible: {
         opacity: 1,
         transition: {
-            duration: 0.4
+            duration: 0.3
         }
     },
     fade: {
-        opacity: 0
+        opacity: 0,
+        transition: {
+            duration: 0.3
+        }
     }
 }
 
@@ -111,11 +114,15 @@ const Notice = (props: noticeProps) => {
                 />
                 
                 <h1>{props.id}</h1>
+                <AnimatePresence>
                     {deleting ? cross : null}
+                </AnimatePresence>
                 <button
                     className="notice-corner"
                     onClick={deleteThis}
                     onKeyDown={(e) => (e.key === "Delete" || e.key === "Backspace") ? deleteThis() : null}
+                    onMouseEnter={() => setDeleting(true)}
+                    onMouseLeave={() => setDeleting(false)}
                     onFocus={() => setDeleting(true)}
                     onBlur={() => setDeleting(false)}
                 />
