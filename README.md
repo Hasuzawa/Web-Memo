@@ -13,8 +13,8 @@ Tip: You can hold Enter when the add button is flashing to add many memo at once
 ## Screenshots
 
 <details open>
-    <img src="./web_memo.png" alt="web memo website">
-    <img src="./error404.png" alt="error 404 page">
+    <img src="./README.md.d/web_memo.png" alt="web memo website">
+    <img src="./README.md.d/error404.png" alt="error 404 page">
 </details>
 
 ## Changelog
