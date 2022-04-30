@@ -10,6 +10,13 @@ It also has a simple custom 404 page. Try it out!
 
 Tip: You can hold Enter when the add button is flashing to add many memo at once
 
+## Screenshots
+
+<details open>
+    <img src="./web_memo.png" alt="web memo website">
+    <img src="./error404.png" alt="error 404 page">
+</details>
+
 ## Changelog
 
 #### 2022
@@ -19,3 +26,4 @@ Tip: You can hold Enter when the add button is flashing to add many memo at once
 - v1.0.2 04-30 Fixed routing issues. Added Esc to lose focus (blur) on add and delete.
 - v1.0.3 04-30 Fixed HTML meta screenshot path and changed the png.
 - v1.0.4 04-30 Refactored CSS. Changed how overflow behaves.
+- v1.0.5 04-30 Added screenshots to readme.md
