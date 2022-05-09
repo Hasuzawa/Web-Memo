@@ -1,6 +1,6 @@
 .outer-frame {
     background-color: #996629;
-    @apply w-screen p-6 h-fit min-h-screen overscroll-none;
+    @apply w-full p-6 h-fit min-h-screen overscroll-none;
     @apply flex flex-col; /* make item stretch to container while still able to expand */
 }
 
@@ -35,8 +35,10 @@
 }
 
 .add {
-    @apply border-8 border-sky-800 border-dashed;
-    border-radius: 2.4em;
+    background-image: repeating-linear-gradient(0deg, #075985, #075985 28px, transparent 28px, transparent 48px, #075985 48px), repeating-linear-gradient(90deg, #075985, #075985 28px, transparent 28px, transparent 48px, #075985 48px), repeating-linear-gradient(180deg, #075985, #075985 28px, transparent 28px, transparent 48px, #075985 48px), repeating-linear-gradient(270deg, #075985, #075985 28px, transparent 28px, transparent 48px, #075985 48px);
+    background-size: 4px 100%, 100% 4px, 4px 100% , 100% 4px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
     @apply cursor-pointer focus:outline-none;
     @apply flex flex-row place-content-center place-items-center;
 }

@@ -4,7 +4,7 @@ This is a minimalistic Web Memo for writing memo online. It does not use cookie 
 
 [Link to the web-memo website](https://hasuzawa.github.io/Web-Memo)
 
-I have set a maximum of 50 memos at one time, but that is not due to technical limitation. Just like real life, you want to keep them organized.
+I have set a maximum of 100 memos at one time, but that is not due to technical limitation. Just like real life, you want to keep them organized.
 
 It also has a simple custom 404 page. Try it out!
 
@@ -17,6 +17,11 @@ Tip: You can hold Enter when the add button is flashing to add many memo at once
     <img src="./README.md.d/error404.png" alt="error 404 page">
 </details>
 
+## Special Thanks
+
+https://codepen.io/amit_sheen/pen/xxZeyjO
+for creating dashed border with aribtary spacing between dashes
+
 ## Changelog
 
 #### 2022
@@ -27,3 +32,6 @@ Tip: You can hold Enter when the add button is flashing to add many memo at once
 - v1.0.3 04-30 Fixed HTML meta screenshot path and changed the png.
 - v1.0.4 04-30 Refactored CSS. Changed how overflow behaves.
 - v1.0.5 04-30 Added screenshots to readme.md
+- v1.0.6 05-09 Changed Outer-frame width from 100vw to 100% to avoid vertical scrollbar causing horizontal overflow on Windows. Changed how appearance of dashed border and how it is presented. Increased limit of memo from 50 to 100.
+
+

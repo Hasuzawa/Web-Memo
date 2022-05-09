@@ -5,7 +5,7 @@ import { LayoutGroup } from "framer-motion"
 
 
 const initial = 5
-const max = 50
+const max = 100
 
 const NoticeBoard = () => {
     const [id, setId] = useState<number>(initial)
